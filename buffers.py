@@ -291,7 +291,7 @@ def load(ptr, typ, op2):
     address = get_var(ptr)
     memvar = (address, typ)
     val = get_var(memvar)
-    set_var(val, op2)
+    set_var(op2, val)
 
 # -- Store a value to an address
 #    op2 is a variable whose value will be used as an address

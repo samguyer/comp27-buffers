@@ -48,3 +48,24 @@ if not equal(passok, 0):
     print('You now have superuser privilege')
 show_memory()
 
+
+# -- Exercise 4
+#  Memory layout:
+#  Addresses 4,6,8 for values
+#  Address 12 for payload
+#  Address 20+ for other data
+size = var(4, 'uint16')
+p = var(6, 'uint16')
+val = var(8, 'uint8')
+payload = var(12, 'str')
+otherdata = var(20, 'str')
+mov('Secret', otherdata)
+read('Size: ', size)
+readstr('Payload: ', payload)
+mov(10, p)
+while not equal(size, 0):
+    load(p, 'uint8', val)
+    show('', val)
+    add(1, p)
+    sub(size, 1)
+show_memory()
