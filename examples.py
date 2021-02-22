@@ -1,7 +1,7 @@
 # -- Exercise 1
 #  Memory layout:
-#    Address 12 for uint16 'x'
 #    Address 4 for string
+#    Address 12 for uint16 'x'
 x = var(12, 'uint16')
 name = var(4, 'str')
 mov(33, x)
@@ -13,8 +13,8 @@ show_memory()
 
 # -- Exercise 2
 #  Memory layout:
-#    Address 12 for 'password ok' integer
 #    Address 4 for input password from user
+#    Address 12 for 'password ok' integer
 passok = var(12, 'uint16')
 password = var(4, 'str')
 mov(0, passok)
